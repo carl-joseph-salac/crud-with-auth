@@ -35,5 +35,9 @@ Route::controller(CrudController::class)->group(function(){
     });
 });
 
+Route::get('tailwind', function(){
+    return view('tailwind');
+});
+
 
 

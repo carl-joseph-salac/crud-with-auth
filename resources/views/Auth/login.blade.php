@@ -16,14 +16,14 @@
             @csrf
             <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" autofocus >
+                <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" autofocus>
                 @error('email')
                     <span>{{ $message }}</span>
                 @enderror
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}" >
+                <input type="password" id="password" name="password" placeholder="Password" value="{{ old('password') }}">
                 @error('password')
                     <span>{{ $message }}</span>
                 @enderror
