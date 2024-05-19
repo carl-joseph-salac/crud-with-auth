@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="flex flex-col items-center justify-center min-h-screen bg-neutral-100">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-amber-50">
         <header class="flex items-center justify-center font-bold mt-14">
             <div class="flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -16,28 +16,29 @@
         </header>
 
         <main class="flex flex-col items-center justify-center flex-grow w-screen px-8">
-            <h2 class="py-12 text-5xl font-bold text-gray-700">
+            <h2 class="mb-2 text-5xl font-bold text-gray-700 py-14">
                 Good to see you again
             </h2>
-
-            <div>
+            <div
+                class="flex-grow w-full mb-5 py-10 px-8 bg-white rounded-lg shadow-xl sm:w-[600px] md:w-[640px] md:mb-8 relative">
                 @if (session('error'))
-                    <p>{{ session('error') }}</p>
+                    <p class="absolute text-red-600 transform -translate-x-1/2 left-1/2 top-5">
+                        {{ session('error') }}
+                    </p>
                 @elseif (session('success'))
-                    <p>{{ session('success') }}</p>
+                    <p class="absolute text-green-600 transform -translate-x-1/2 left-1/2 top-5">
+                        {{ session('success') }}
+                    </p>
                 @endif
-            </div>
-
-            <div class="flex-grow w-full mb-5 pt-8 px-8  bg-white rounded-lg shadow-lg sm:w-[600px] md:w-[640px] md:mb-40">
                 <form class="flex flex-col items-center justify-center w-full" action="{{ route('loginUser') }}"
                     method="POST">
                     @csrf
-                    <div class="relative flex flex-col w-full mb-9">
-                        <label class="mb-3 text-lg font-semibold text-gray-500" for="email">Your Email</label>
+                    <div class="relative flex flex-col w-full mb-10">
+                        <label class="mb-4 text-lg font-semibold text-gray-500" for="email">Your Email</label>
                         <div class="relative">
                             <input
-                                class="w-full py-3 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 "
-                                type="email" id="email" name="email" placeholder="e.g. vilt@stack.com"
+                                class="w-full py-4 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 "
+                                type="email" id="email" name="email" placeholder="e.g. carl@gmail.com"
                                 value="{{ old('email') }}" autofocus />
                             <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -52,12 +53,12 @@
                             <span class="absolute left-0 text-red-600 -bottom-7">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="relative flex flex-col w-full mb-9">
-                        <label class="mb-3 text-lg font-semibold text-gray-500" for="password">Your Password</label>
+                    <div class="relative flex flex-col w-full mb-10">
+                        <label class="mb-4 text-lg font-semibold text-gray-500" for="password">Your Password</label>
                         <div class="relative">
                             <input
-                                class="w-full py-3 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                                type="password" id="password" name="password" placeholder="e.g. viltstack123"
+                                class="w-full py-4 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                type="password" id="password" name="password" placeholder="e.g. carl123"
                                 value="{{ old('password') }}" autofocus />
                             <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -72,7 +73,9 @@
                             <span class="absolute left-0 text-red-600 -bottom-7">{{ $message }}</span>
                         @enderror
                     </div>
-                    <button class="p-3 mb-10 text-lg font-bold text-white bg-green-600 rounded-full w-96" type="submit">
+                    <button
+                        class="p-3 mb-12 text-lg font-bold text-white rounded-full bg-gradient-to-r from-green-600 to-green-400 w-96 hover:from-green-400 hover:to-green-600"
+                        type="submit">
                         Sign in
                     </button>
                     <div class="flex justify-between w-full px-10 text-lg font-bold text-blue-700 underline">
@@ -83,13 +86,31 @@
             </div>
         </main>
 
-        {{-- <footer class="flex items-center justify-center w-full p-5 mb-3 font-bold bg-slate-500">
-            <div class="flex items-center justify-between">
-                <div class="w-16 h-16 bg-white rounded shadow-lg ">
-
+        <footer class="flex items-center justify-around w-full p-5 mb-16 font-bold sm:w-[600px]">
+            <div class="flex items-center">
+                <div class="flex items-center justify-center bg-white rounded shadow-md shadow-slate-400 w-14 h-14 me-3">
+                    <svg height="2500" viewBox="0 -.11376601 49.74245785 51.31690859" width="2418"
+                        xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                        <path
+                            d="m49.626 11.564a.809.809 0 0 1 .028.209v10.972a.8.8 0 0 1 -.402.694l-9.209 5.302v10.509c0 .286-.152.55-.4.694l-19.223 11.066c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 0 1 -.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054l-19.219-11.066a.801.801 0 0 1 -.402-.694v-32.916c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.023.053-.04.079-.06.029-.024.055-.05.088-.069h.001l9.61-5.533a.802.802 0 0 1 .8 0l9.61 5.533h.002c.032.02.059.045.088.068.026.02.055.038.078.06.028.029.048.062.072.094.017.024.04.045.054.071.023.04.036.082.052.124.008.023.022.044.028.068a.809.809 0 0 1 .028.209v20.559l8.008-4.611v-10.51c0-.07.01-.141.028-.208.007-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.037-.047.054-.071.024-.032.044-.065.072-.093.023-.023.052-.04.078-.06.03-.024.056-.05.088-.069h.001l9.611-5.533a.801.801 0 0 1 .8 0l9.61 5.533c.034.02.06.045.09.068.025.02.054.038.077.06.028.029.048.062.072.094.018.024.04.045.054.071.023.039.036.082.052.124.009.023.022.044.028.068zm-1.574 10.718v-9.124l-3.363 1.936-4.646 2.675v9.124l8.01-4.611zm-9.61 16.505v-9.13l-4.57 2.61-13.05 7.448v9.216zm-36.84-31.068v31.068l17.618 10.143v-9.214l-9.204-5.209-.003-.002-.004-.002c-.031-.018-.057-.044-.086-.066-.025-.02-.054-.036-.076-.058l-.002-.003c-.026-.025-.044-.056-.066-.084-.02-.027-.044-.05-.06-.078l-.001-.003c-.018-.03-.029-.066-.042-.1-.013-.03-.03-.058-.038-.09v-.001c-.01-.038-.012-.078-.016-.117-.004-.03-.012-.06-.012-.09v-21.483l-4.645-2.676-3.363-1.934zm8.81-5.994-8.007 4.609 8.005 4.609 8.006-4.61-8.006-4.608zm4.164 28.764 4.645-2.674v-20.096l-3.363 1.936-4.646 2.675v20.096zm24.667-23.325-8.006 4.609 8.006 4.609 8.005-4.61zm-.801 10.605-4.646-2.675-3.363-1.936v9.124l4.645 2.674 3.364 1.937zm-18.422 20.561 11.743-6.704 5.87-3.35-8-4.606-9.211 5.303-8.395 4.833z"
+                            fill="#ff2d20" />
+                    </svg>
+                    {{-- <img src="{{ asset('svg/laravel.svg') }}" alt="Laravel Icon" class="w-full h-full"> --}}
                 </div>
-                <h2 class="text-xl">Footer</h1>
+                <h2 class="text-2xl font-bold">Laravel</h1>
             </div>
-        </footer> --}}
+            <div class="flex items-center">
+                <div class="flex items-center justify-center bg-white rounded shadow-md shadow-slate-400 w-14 h-14 me-3">
+                    <svg height="1499" viewBox=".15 .13 799.7 479.69" width="2500" xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8">
+                        <path
+                            d="m400 .13c-106.63 0-173.27 53.3-199.93 159.89 39.99-53.3 86.64-73.28 139.95-59.96 30.42 7.6 52.16 29.67 76.23 54.09 39.2 39.78 84.57 85.82 183.68 85.82 106.62 0 173.27-53.3 199.92-159.9-39.98 53.3-86.63 73.29-139.95 59.97-30.41-7.6-52.15-29.67-76.22-54.09-39.2-39.78-84.58-85.82-183.68-85.82zm-199.93 239.84c-106.62 0-173.27 53.3-199.92 159.9 39.98-53.3 86.63-73.29 139.95-59.96 30.41 7.61 52.15 29.67 76.22 54.08 39.2 39.78 84.58 85.83 183.68 85.83 106.63 0 173.27-53.3 199.93-159.9-39.99 53.3-86.64 73.29-139.95 59.96-30.42-7.59-52.16-29.67-76.23-54.08-39.2-39.78-84.57-85.83-183.68-85.83z"
+                            fill="#06b6d4" />
+                    </svg>
+                    {{-- <img src="{{ asset('svg/laravel.svg') }}" alt="Laravel Icon" class="w-full h-full"> --}}
+                </div>
+                <h2 class="text-2xl font-bold">Tailwind</h1>
+            </div>
+        </footer>
     </div>
 @endsection
