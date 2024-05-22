@@ -15,18 +15,20 @@
             </div>
         </header>
 
-        <main class="flex flex-col items-center justify-center flex-grow w-screen px-8">
-            <h2 class="mb-2 text-5xl font-bold text-gray-700 py-14">
+        <main class="flex flex-col items-center justify-center w-screen px-4 sm:px-8">
+            <h2 class="py-5 mb-2 text-3xl font-bold text-gray-700 sm:text-5xl sm:py-14">
                 Good to see you again
             </h2>
             <div
-                class="flex-grow w-full mb-5 py-10 px-8 bg-white rounded-lg shadow-xl sm:w-[600px] md:w-[640px] md:mb-8 relative">
+                class="flex w-full p-5 sm:py-10 sm:px-8 bg-white rounded-lg shadow-xl sm:w-[600px] md:w-[640px] md:mb-8 relative">
                 @if (session('error'))
-                    <p class="absolute text-red-600 transform -translate-x-1/2 left-1/2 top-5">
+                    <p
+                        class="absolute text-sm text-red-600 transform -translate-x-1/2 top-1 left-1/2 sm:top-4 sm:text-base">
                         {{ session('error') }}
                     </p>
                 @elseif (session('success'))
-                    <p class="absolute text-green-600 transform -translate-x-1/2 left-1/2 top-5">
+                    <p
+                        class="absolute text-sm text-green-600 transform -translate-x-1/2 top-1 left-1/2 sm:top-4 sm:text-base">
                         {{ session('success') }}
                     </p>
                 @endif
@@ -34,10 +36,12 @@
                     method="POST">
                     @csrf
                     <div class="relative flex flex-col w-full mb-10">
-                        <label class="mb-4 text-lg font-semibold text-gray-500" for="email">Your Email</label>
+                        <label class="mb-4 font-semibold text-gray-500 sm:text-lg" for="email">
+                            Your Email
+                        </label>
                         <div class="relative">
                             <input
-                                class="w-full py-4 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 "
+                                class="w-full py-2 pl-20 pr-4 font-semibold rounded-sm sm:text-lg sm:py-4 ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 "
                                 type="email" id="email" name="email" placeholder="e.g. carl@gmail.com"
                                 value="{{ old('email') }}" autofocus />
                             <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
@@ -54,10 +58,11 @@
                         @enderror
                     </div>
                     <div class="relative flex flex-col w-full mb-10">
-                        <label class="mb-4 text-lg font-semibold text-gray-500" for="password">Your Password</label>
+                        <label class="mb-4 text-base font-semibold text-gray-500 sm:text-lg" for="password">Your
+                            Password</label>
                         <div class="relative">
                             <input
-                                class="w-full py-4 pl-20 pr-4 text-lg font-semibold rounded-sm ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                class="w-full py-2 pl-20 pr-4 font-semibold rounded-sm sm:text-lg sm:py-4 ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
                                 type="password" id="password" name="password" placeholder="e.g. carl123"
                                 value="{{ old('password') }}" autofocus />
                             <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
@@ -74,11 +79,11 @@
                         @enderror
                     </div>
                     <button
-                        class="p-3 mb-12 text-lg font-bold text-white rounded-full bg-gradient-to-r from-green-600 to-green-400 w-96 hover:from-green-400 hover:to-green-600"
+                        class="w-3/4 p-2 mb-12 text-lg font-bold text-white rounded-full sm:p-3 bg-gradient-to-r from-green-600 to-green-400 sm:w-96 hover:from-green-400 hover:to-green-600"
                         type="submit">
                         Sign in
                     </button>
-                    <div class="flex justify-between w-full px-10 text-lg font-bold text-blue-700 underline">
+                    <div class="flex justify-between w-full text-sm font-bold text-blue-700 underline sm:px-10 sm:text-lg">
                         <a href="{{ route('showRegister') }}">Don't have an account?</a>
                         <a href="#">Forgot Password?</a>
                     </div>
@@ -86,9 +91,10 @@
             </div>
         </main>
 
-        <footer class="flex items-center justify-around w-full p-5 mb-16 font-bold sm:w-[600px]">
-            <div class="flex items-center">
-                <div class="flex items-center justify-center bg-white rounded shadow-md shadow-slate-400 w-14 h-14 me-3">
+        <footer class="flex sm:flex-row flex-col items-center justify-around w-full p-5 sm:mb-16 font-bold sm:w-[600px]">
+            <div class="flex items-center justify-between w-auto mb-5 sm:mb-0">
+                <div
+                    class="flex items-center justify-center bg-white rounded shadow-md w-14 shadow-slate-400 h-14 sm:me-3 me-6">
                     <svg height="2500" viewBox="0 -.11376601 49.74245785 51.31690859" width="2418"
                         xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
                         <path
