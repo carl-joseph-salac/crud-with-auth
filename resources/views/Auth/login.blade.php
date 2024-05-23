@@ -16,19 +16,17 @@
         </header>
 
         <main class="flex flex-col items-center justify-center w-screen px-4 sm:px-8">
-            <h2 class="py-5 mb-2 text-3xl font-bold text-gray-700 sm:text-5xl sm:py-14">
+            <h2 class="py-5 mb-2 text-3xl font-bold text-gray-700 sm:text-5xl sm:py-14 xxs:text-2xl">
                 Good to see you again
             </h2>
             <div
                 class="flex w-full p-5 sm:py-10 sm:px-8 bg-white rounded-lg shadow-xl sm:w-[600px] md:w-[640px] md:mb-8 relative">
                 @if (session('error'))
-                    <p
-                        class="absolute text-sm text-red-600 transform -translate-x-1/2 top-1 left-1/2 sm:top-4 sm:text-base">
+                    <p class="text-red-600 notification-message">
                         {{ session('error') }}
                     </p>
                 @elseif (session('success'))
-                    <p
-                        class="absolute text-sm text-green-600 transform -translate-x-1/2 top-1 left-1/2 sm:top-4 sm:text-base">
+                    <p class="text-green-600  notification-message">
                         {{ session('success') }}
                     </p>
                 @endif
@@ -36,15 +34,13 @@
                     method="POST">
                     @csrf
                     <div class="relative flex flex-col w-full mb-10">
-                        <label class="mb-4 font-semibold text-gray-500 sm:text-lg" for="email">
+                        <label class="label" for="email">
                             Your Email
                         </label>
                         <div class="relative">
-                            <input
-                                class="w-full py-2 pl-20 pr-4 font-semibold rounded-sm sm:text-lg sm:py-4 ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 "
-                                type="email" id="email" name="email" placeholder="e.g. carl@gmail.com"
-                                value="{{ old('email') }}" autofocus />
-                            <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
+                            <input class="input" type="email" id="email" name="email"
+                                placeholder="e.g. carl@gmail.com" value="{{ old('email') }}" autofocus />
+                            <div class="input-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-5 h-5">
                                     <path fill-rule="evenodd"
@@ -54,18 +50,16 @@
                             </div>
                         </div>
                         @error('email')
-                            <span class="absolute left-0 text-red-600 -bottom-7">{{ $message }}</span>
+                            <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="relative flex flex-col w-full mb-10">
-                        <label class="mb-4 text-base font-semibold text-gray-500 sm:text-lg" for="password">Your
+                        <label class="label" for="password">Your
                             Password</label>
                         <div class="relative">
-                            <input
-                                class="w-full py-2 pl-20 pr-4 font-semibold rounded-sm sm:text-lg sm:py-4 ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                                type="password" id="password" name="password" placeholder="e.g. carl123"
+                            <input class="input" type="password" id="password" name="password" placeholder="e.g. carl123"
                                 value="{{ old('password') }}" autofocus />
-                            <div class="absolute inset-y-0 left-0 flex items-center px-5 pointer-events-none border-e">
+                            <div class="input-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-5 h-5">
                                     <path fill-rule="evenodd"
@@ -75,7 +69,7 @@
                             </div>
                         </div>
                         @error('password')
-                            <span class="absolute left-0 text-red-600 -bottom-7">{{ $message }}</span>
+                            <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
                     <button
@@ -83,7 +77,8 @@
                         type="submit">
                         Sign in
                     </button>
-                    <div class="flex justify-between w-full text-sm font-bold text-blue-700 underline sm:px-10 sm:text-lg">
+                    <div
+                        class="flex justify-between w-full text-sm font-bold text-blue-700 underline sm:px-10 sm:text-lg xxs:text-xs">
                         <a href="{{ route('showRegister') }}">Don't have an account?</a>
                         <a href="#">Forgot Password?</a>
                     </div>

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .notification-message {
+        @apply absolute left-1/2 top-1 -translate-x-1/2 transform text-sm sm:top-4 sm:text-base;
+    }
+
+    .label {
+        @apply mb-4 font-semibold text-gray-500 sm:text-lg;
+    }
+
+    .input {
+        @apply w-full rounded-sm py-2 pl-20 pr-4 font-semibold ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 sm:py-4 sm:text-lg;
+    }
+
+    .input-icon {
+        @apply pointer-events-none absolute inset-y-0 left-0 flex items-center border-e px-5;
+    }
+
+    .error {
+        @apply absolute -bottom-7 left-0 text-red-600;
+    }
+}
