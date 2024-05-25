@@ -8,9 +8,9 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                xxs: { max: "639px" },
+                xxs: { max: "380px" },
             },
         },
     },
-    plugins: [],
+    plugins: [require("daisyui")],
 };
