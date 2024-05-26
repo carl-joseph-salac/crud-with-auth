@@ -9,7 +9,8 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen bg-amber-50">
+    @yield('navbar')
     @yield('content')
 </body>
 

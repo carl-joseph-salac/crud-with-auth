@@ -4,24 +4,24 @@
 
 @section('content')
     <div class="flex flex-col items-center justify-center min-h-screen bg-amber-50">
-        <header class="flex items-center font-bold mt-14 justify-start">
+        <header class="flex items-center justify-start font-bold mt-14">
             <div class="flex items-center justify-center">
                 <img class="size-7 me-1" src="{{ Vite::asset('resources/svg/register.svg') }}" alt="">
                 <h1 class="text-3xl">Register</h1>
             </div>
         </header>
-        <main class="flex items-center justify-center min-w-full flex-grow flex-col gap-4">
+        <main class="flex flex-col items-center justify-center flex-grow min-w-full gap-4">
             <div
                 class="flex xxs:w-[300px] w-[370px] sm:w-[500px] p-5 sm:p-8 bg-white rounded-lg shadow-xl relative justify-center">
-                <div class="flex items-center gap-5 justify-center absolute -top-24 w-full">
+                <div class="absolute flex items-center justify-center w-full gap-5 -top-24">
                     <img class="w-20 h-14" src="{{ Vite::asset('resources/svg/laravel.svg') }}" alt="Laravel">
                     <img class="w-20 h-20" src="{{ Vite::asset('resources/svg/tailwind-css.svg') }}" alt="Tailwind">
                 </div>
                 <form class="flex flex-col items-center justify-center w-full gap-10" action="{{ route('registerUser') }}"
                     method="post">
                     @csrf
-                    <div class="w-full relative">
-                        <label class="input input-bordered flex items-center gap-2 p-5" for="name">
+                    <div class="relative w-full">
+                        <label class="flex items-center gap-2 p-5 input input-bordered" for="name">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                                 class="w-4 h-4 opacity-70">
                                 <path
@@ -34,8 +34,8 @@
                             <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="w-full relative">
-                        <label class="input input-bordered flex items-center gap-2 p-5" for="email">
+                    <div class="relative w-full">
+                        <label class="flex items-center gap-2 p-5 input input-bordered" for="email">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                                 class="w-4 h-4 opacity-70">
                                 <path
@@ -50,8 +50,8 @@
                             <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="w-full relative">
-                        <label class="input input-bordered flex items-center gap-2 p-5" for="password">
+                    <div class="relative w-full">
+                        <label class="flex items-center gap-2 p-5 input input-bordered" for="password">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                                 class="w-4 h-4 opacity-70">
                                 <path fill-rule="evenodd"
@@ -64,9 +64,9 @@
                             <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="flex w-full justify-end items-center">
-                        <a class=" btn btn-link" href="{{ route('showLogin') }}">Already registered?</a>
-                        <button class="btn btn-success btn-sm px-6 text-white" type="submit">Register</button>
+                    <div class="flex items-center justify-end w-full">
+                        <a class="btn btn-link" href="{{ route('showLogin') }}">Already registered?</a>
+                        <button class="px-6 text-white btn btn-success btn-sm" type="submit">Register</button>
                     </div>
                 </form>
             </div>

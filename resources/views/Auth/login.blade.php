@@ -2,6 +2,10 @@
 
 @section('title', 'Login')
 
+@section('navbar')
+
+@endsection
+
 @section('content')
     <div class="flex flex-col items-center justify-center min-h-screen bg-amber-50">
         <header class="flex items-center justify-center font-bold mt-14">
