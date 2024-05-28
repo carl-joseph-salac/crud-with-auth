@@ -12,7 +12,7 @@
     }
 
     .custom-input {
-        @apply w-full rounded-sm py-2 pl-20 pr-4 font-semibold ring-1 ring-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 sm:py-4 sm:text-lg;
+        @apply w-full rounded-sm py-2 pl-20 pr-4 font-semibold ring-1 ring-gray-400 focus:border-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 sm:py-4 sm:text-lg;
     }
 
     .input-icon {
@@ -20,6 +20,6 @@
     }
 
     .error {
-        @apply absolute -bottom-7 left-0  text-sm text-red-600;
+        @apply absolute -bottom-6 left-0  text-sm text-red-600;
     }
 }
