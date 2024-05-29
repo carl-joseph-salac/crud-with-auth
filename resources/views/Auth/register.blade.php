@@ -77,7 +77,7 @@
                         @enderror
                     </div>
                     <div class="flex items-center justify-end w-full">
-                        <a class="btn btn-link" href="{{ route('showLogin') }}">Already registered?</a>
+                        <a class="btn btn-link " href="{{ route('showLogin') }}">Already registered?</a>
                         <button class="px-6 text-white btn btn-success btn-sm" type="submit">Register</button>
                     </div>
                 </form>
