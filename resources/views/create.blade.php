@@ -2,8 +2,6 @@
 
 @section('title', 'Create')
 
-@section('header', 'CREATE')
-
 @section('navbar')
     @include('layout.navbar')
 @endsection
@@ -21,7 +19,7 @@
                     </label>
                     <input
                         class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        type="text" id="first-name" name="firstName" placeholder="Carl Joseph"
+                        type="text" id="first-name" name="firstName" placeholder="First name"
                         value="{{ old('firstName') }}" autofocus />
                     @error('firstName')
                         <span class="error">{{ $message }}</span>

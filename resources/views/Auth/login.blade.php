@@ -19,8 +19,7 @@
             <h2 class="py-5 mb-2 text-3xl font-bold text-gray-700 sm:text-5xl sm:py-14 xxs:text-2xl">
                 Good to see you again
             </h2>
-            <div
-                class="flex w-full p-5 sm:py-10 sm:px-8 bg-white rounded-lg shadow-xl sm:w-[600px] md:w-[640px] md:mb-8 relative">
+            <div class="flex w-full p-5 sm:py-8 sm:px-8 bg-white rounded-lg shadow-xl sm:w-[600px]  md:mb-8 relative">
                 @if (session('error'))
                     <p class="text-red-600 notification-message">
                         {{ session('error') }}
