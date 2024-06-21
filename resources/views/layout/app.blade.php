@@ -21,6 +21,7 @@
 <body class="flex flex-col min-h-screen dark:bg-gray-950">
     @yield('navbar')
     @yield('content')
+
     <script>
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

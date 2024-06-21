@@ -24,7 +24,7 @@ class CrudController extends Controller
             'firstName' => 'required',
             'middleName' => 'required',
             'lastName' => 'required',
-            'age' => 'required'
+            'age' => 'required|integer|min:0',
         ]);
 
         Info::create([
@@ -45,7 +45,7 @@ class CrudController extends Controller
             'firstName' => 'required',
             'middleName' => 'required',
             'lastName' => 'required',
-            'age' => 'required'
+            'age' => 'required|integer|min:0'
         ]);
         $info->update($data);
         return redirect()->route('showHome')->with('updated', 'Updated Successfully');
