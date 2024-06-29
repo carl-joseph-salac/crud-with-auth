@@ -11,7 +11,7 @@
         <header class="flex items-center justify-center font-bold mt-14">
             <div class="flex items-center justify-center">
                 <img class="size-7 me-1" src="{{ Vite::asset('resources/svg/login.svg') }}" alt="">
-                <h1 class="text-3xl">Login</h1>
+                <h1 class="text-3xl text-gray-700">Login</h1>
             </div>
         </header>
 
@@ -37,7 +37,7 @@
                             Your Email
                         </label>
                         <div class="relative">
-                            <input class="custom-input" type="email" id="email" name="email"
+                            <input class="text-gray-700 custom-input" type="email" id="email" name="email"
                                 placeholder="e.g. carl@gmail.com" value="{{ old('email') }}" autofocus />
                             <div class="input-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -55,7 +55,7 @@
                     <div class="relative flex flex-col w-full mb-10">
                         <label class="label" for="password">Your Password</label>
                         <div class="relative">
-                            <input class="custom-input" type="password" id="password" name="password"
+                            <input class="text-gray-700 custom-input" type="password" id="password" name="password"
                                 placeholder="e.g. carl123" value="{{ old('password') }}" autofocus />
                             <div class="input-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -90,13 +90,13 @@
                     class="flex items-center justify-center bg-white rounded shadow-md w-14 shadow-slate-400 h-14 sm:me-3 me-6">
                     <img src="{{ Vite::asset('resources/svg/laravel.svg') }}" alt="Laravel Icon" class="w-8 h-8">
                 </div>
-                <h2 class="text-2xl font-bold">Laravel</h1>
+                <h2 class="text-2xl font-bold text-gray-700">Laravel</h1>
             </div>
             <div class="flex items-center">
                 <div class="flex items-center justify-center bg-white rounded shadow-md shadow-slate-400 w-14 h-14 me-3">
                     <img src="{{ Vite::asset('resources/svg/tailwind-css.svg') }}" alt="Laravel Icon" class="w-8 h-8">
                 </div>
-                <h2 class="text-2xl font-bold">Tailwind</h1>
+                <h2 class="text-2xl font-bold text-gray-700">Tailwind</h1>
             </div>
         </footer>
     </div>
