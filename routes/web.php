@@ -39,5 +39,10 @@ Route::get('tailwind', function(){
     return view('tailwind');
 });
 
-
-
+Route::get('/run-artisan', function () {
+    Artisan::call('config:cache');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    return 'Config cache cleared and re-cached.';
+});
